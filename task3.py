@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-print("insert desired lover bound")
+print("Insert desired lover bound")
 lb = int(input())
-print("insert desired upper bound")
+print("Insert desired upper bound")
 ub = int(input())
 li = []
 for i in range(lb, ub + 1):
@@ -14,4 +14,5 @@ for i in range(lb, ub + 1):
             break
     if accepted:
         li.append(temp)
+print("Self dividing numbers from scope: ")
 print(li)
