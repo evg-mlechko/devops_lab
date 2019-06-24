@@ -8,7 +8,8 @@ ap = argparse.ArgumentParser(description='Easy way to get info about PR:')
 
 ap.add_argument("user", help="insert github username")
 ap.add_argument("--repo", help="insert number of github pull-request")
-ap.add_argument("--version", help="output version the app", action="store_true")
+ap.add_argument("--version", help="output version the app",
+                action="store_true")
 # , action="store_true"
 
 args = ap.parse_args()
@@ -27,11 +28,11 @@ user = "evg-mlechko"
 token = 'b8945f269fcc212e085f149af3efe95290b16335'
 url = 'https://api.github.com/repos/alenaPy/devops_lab/pulls/%s' % prNumber
 pulls = requests.get(url, auth=(user, token))
-# merges = requests.get('https://api.github.com/repos/sbvasilenok/devops_lab/merges', auth=(user, token))
 pullsjson = pulls.json()
 
 jsondate = pullsjson["created_at"]
-converted_created_at = datetime.datetime.strptime(jsondate, "%Y-%m-%dT%H:%M:%SZ")
+converted_created_at = datetime.datetime.strptime(jsondate,
+                                                  "%Y-%m-%dT%H:%M:%SZ")
 
 days_opened = datetime.datetime.now() - converted_created_at
 print("Numbers of days opened: "+str(days_opened.days))
