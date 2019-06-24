@@ -35,7 +35,7 @@ converted_created_at = datetime.datetime.strptime(jsondate,
                                                   "%Y-%m-%dT%H:%M:%SZ")
 
 days_opened = datetime.datetime.now() - converted_created_at
-print("Numbers of days opened: "+ str(days_opened.days))
+print("Numbers of days opened: " + str(days_opened.days))
 
 day_of_the_week = calendar.day_name[converted_created_at.weekday()]
 print("Day of the week opened : " + day_of_the_week)
