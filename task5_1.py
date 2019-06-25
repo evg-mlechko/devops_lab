@@ -31,15 +31,14 @@ def output():
 
 
 output()
-prints = json.dumps(
-    {
+prints = json.dumps({
     "Python version": str(sys.version[:5]),
     "In use virtual enviroment": str(sys.prefix),
     "Python executable location": str(sys.executable),
     "Pip location": k,
     "Pythonpath location": sys.prefix,
     "Pythonpath installed packages": str(li)
-    }, indent=4)
+}, indent=4)
 
 file.write(prints)
 
