@@ -27,19 +27,18 @@ def output():
     print('4. Pip location is: ' + k)
     print('5. Pythonpath location is: ' + sys.prefix)
     print('6. Pythonpath installed packages: ' + str(li))
-    print('7. Site packages location is: ' +
-          next(p for p in sys.path if 'site-packages' in p))
+    print('7. Site packages location is: ' + next(p for p in sys.path if 'site-packages' in p))
 
 
 output()
 prints = json.dumps({
-            "Python version": str(sys.version[:5]),
-            "In use virtual enviroment": str(sys.prefix),
-            "Python executable location": str(sys.executable),
-            "Pip location": k,
-            "Pythonpath location": sys.prefix,
-            "Pythonpath installed packages": str(li)
-        }, indent=4)
+    "Python version": str(sys.version[:5]),
+    "In use virtual enviroment": str(sys.prefix),
+    "Python executable location": str(sys.executable),
+    "Pip location": k,
+    "Pythonpath location": sys.prefix,
+    "Pythonpath installed packages": str(li)
+    }, indent=4)
 
 file.write(prints)
 
