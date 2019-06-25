@@ -31,7 +31,8 @@ def output():
 
 
 output()
-prints = json.dumps({
+prints = json.dumps(
+    {
     "Python version": str(sys.version[:5]),
     "In use virtual enviroment": str(sys.prefix),
     "Python executable location": str(sys.executable),
