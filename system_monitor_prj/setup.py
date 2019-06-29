@@ -9,5 +9,6 @@ setuptools.setup(
     author="Yauheni Mlechka",
     author_email="yauheni_mlechka@epam.com",
     description="app for collecting and export to file system info",
+    include_package_data=True,
     license="MIT License"
 )
