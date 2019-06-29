@@ -1,14 +1,10 @@
-
-servername: server
-documentroot: root00
-#serveradmin: admin1
-directorypath: /opt/tomcat/webapps/
-
-
 apache_vhosts:
 - servername: www.server1.com
   documentroot: root1
   ServerAdmin: www-admin1
+  directorypath: /opt/tomcat/webapps/app1
+
 - servername: www.server2.com
   documentroot: root2
-  ServerAdmin: www-admin2
+  ServerAdmin: www-admin4
+  directorypath: /opt/tomcat/webapps/app2
