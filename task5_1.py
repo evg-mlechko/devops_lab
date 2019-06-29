@@ -2,7 +2,6 @@ import sys
 import subprocess
 import json
 import yaml
-import os
 from pip._internal.operations import freeze
 
 
@@ -12,7 +11,8 @@ class Versions:
 
 li = []
 file = open("syslog.json", "w")
-m = os.environ['VIRTUAL_ENV'].split('/')
+# m = os.environ['VIRTUAL_ENV'].split('/')
+m = sys.prefix.split('/')
 env = m[len(m) - 1]
 k = subprocess.getoutput("which pip")
 x = freeze.freeze()
@@ -33,18 +33,18 @@ def output():
 output()
 prints = json.dumps({
     "Python version": str(sys.version[:5]),
-    "In use virtual enviroment": str(sys.prefix),
+    "Using next virtual enviroment": str(env),
     "Python executable location": str(sys.executable),
     "Pip location": k,
     "Pythonpath location": sys.prefix,
     "Pythonpath installed packages": str(li)
-    }, indent=4)
+}, indent=4)
 
 file.write(prints)
 
 data = dict(
     Python_version=str(sys.version[:5]),
-    In_use_virtual_enviroment=str(sys.prefix),
+    In_use_virtual_enviroment=str(env),
     Python_executable_location=str(sys.executable),
     Pip_location=k,
     Pythonpath_location=sys.prefix,
